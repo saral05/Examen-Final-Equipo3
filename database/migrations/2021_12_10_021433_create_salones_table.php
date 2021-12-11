@@ -14,10 +14,10 @@ class CreateSalonesTable extends Migration
     public function up()
     {
         Schema::create('salones', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id_salon');
             $table->string('nombre');
+            $table->string('especialidad');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
