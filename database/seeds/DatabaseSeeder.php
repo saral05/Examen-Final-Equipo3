@@ -2,8 +2,10 @@
 
 use Illuminate\Database\Seeder;
 use App\Salones;
-use App\Materia;
-use App\Student;
+use App\Students;
+use App\Materias;
+
+use Illuminate\Support\Facades\BD;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -14,8 +16,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
-        factory(Salones::class,10)->create();
-        factory(Materia::class,10)->create();
-        factory(Student::class,10)->create();
+        factory(Salones::class,50)->create();
+        factory(Materias::class,50)->create();
+        factory(Students::class,50)->create();
     }
 }

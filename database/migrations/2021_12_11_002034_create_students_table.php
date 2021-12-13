@@ -14,18 +14,18 @@ class CreateStudentsTable extends Migration
     public function up()
     {
         Schema::create('students', function (Blueprint $table) {
-            $table->bigIncrements('id_estudiante');
+            $table->bigIncrements('id');
             $table->integer('matricula');
             $table->string('nombre');
             $table->string('apellido_paterno');
             $table->string('apellido_materno');
             
             //llaves foraneas
-             $table->unsignedBigInteger('salon_id');
-             $table->foreign('salon_id')->references('id_salon')->on('salones');
+             $table->unsignedBigInteger('salones_id');
+             $table->foreign('salones_id')->references('id_salon')->on('salones');
             // // $table->string('nombre');
-            $table->unsignedBigInteger('materias_id');
-            $table->foreign('materias_id')->references('id')->on('materias');
+            $table->unsignedBigInteger('materia_id');
+            $table->foreign('materia_id')->references('id')->on('materias');
             $table->timestamps();
         });
     }

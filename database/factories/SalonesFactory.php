@@ -9,7 +9,6 @@ $factory->define(Salones::class, function (Faker $faker) {
     return [
         // $table->bigIncrements('id_salon');
         'nombre'=>$faker->name,
-        'especialidad'=>$faker->name,
                
     ];
 });

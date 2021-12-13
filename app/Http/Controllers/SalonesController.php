@@ -14,7 +14,8 @@ class SalonesController extends Controller
      */
     public function index()
     {
-        //
+        $salones = Salones::latest()->paginate(10);
+        return view('salones.index',['salones' => $salones]);
     }
 
     /**
@@ -35,7 +36,10 @@ class SalonesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Salones::create([
+            'nombre'=>$request->nombre,
+        ]);
+        return redirect('/salones')->with('mesage', 'El salon se a agregado exitosamente!');
     }
 
     /**
@@ -55,9 +59,10 @@ class SalonesController extends Controller
      * @param  \App\Salones  $salones
      * @return \Illuminate\Http\Response
      */
-    public function edit(Salones $salones)
+    public function edit(Salones $id)
     {
-        //
+        $classroom=Salones::findOrFail($id);
+        return view('salones.edit',['classroom'=>$classroom]);
     }
 
     /**
@@ -69,7 +74,9 @@ class SalonesController extends Controller
      */
     public function update(Request $request, Salones $salones)
     {
-        //
+        $classroom=Salones::findOrFail($salones->id);
+        $classroom->update($request->all());
+        return redirect('/salones')->with('mesage', 'El salon se a actualizado exitosamente!');
     }
 
     /**
