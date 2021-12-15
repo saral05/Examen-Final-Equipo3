@@ -54,19 +54,18 @@
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ingresa Nombre de Salon</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Ingresa Un alumno </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label=""></button>
                       </div>
                       <div class="modal-body">
                         <div class="container">
                           <div class="row">
-                          <form action="{{route('salones.store') }}" method="POST">
-                          {{--<form action="{{route('salones.store') }}" method="POST">--}}
+                            <form action="{{route('salones.store') }}" method="POST">
                               {{-- generar el token para el envio de dato csrf --}}
                               {{ csrf_field() }}
 
                               <label class="col" for="">Nombre Salon:</label>
-                              <input id= "nombre" class="col from-control" type="text" name="nombre" placeholder="Español">
+                              <input id= "name" class="col from-control" type="text" name="name" placeholder="Deportes">
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -90,17 +89,17 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach($salones as $sanol)
+                      @foreach($students as $alumno)
                       <tr>
-                        <td>{{$sanol->id_salon}}</td>
-                        <td>{{$sanol->nombre}}</td>
+                        <td>{{$alumno->id}}</td>
+                        <td>{{$alumno->nombre}}</td>
                         <td>
                           <button type="button" class="btn  btn-primary"><i class="far fa-eye"></i></button>
-                          <a href="/salones/{{$sanol->id_salon}}/edit" class="btn btn-success"><i class="fas fa-pen-square"></i></a>
-                          {{-- <a class="btn btn-success"  data-bs-target="#modalUpdate" data-catid="{{$category->id}}" data-bs-toggle="modal">
+                          <a href="/salones/{{$alumno->id}}/edit" class="btn btn-success"><i class="fas fa-pen-square"></i></a>
+                          {{-- <a class="btn btn-success"  data-bs-target="#modalUpdate" data-catid="{{$nombre->id}}" data-bs-toggle="modal">
                             <i class="fas fa-pen-square"></i></a> --}}
-
-                            {{-- <form action="{{ route('salones.destroy', $salon) }}" method="POST">
+{{--
+                          <form action="{{ route('alumno.destroy', $salon) }}" method="POST">
                             @method('DELETE')
                             @csrf
                             <button type='submit' class="btn btn-sm btn-danger"
@@ -116,7 +115,7 @@
 
                   </table>
                   {{-- renderear el metodo paginate --}}
-                  {{$salones->links()}}
+                  {{$students->links()}}
                   <!-- Modal edit  STAR
                   <div class="modal fade" id="modalUpdate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -128,7 +127,7 @@
                         <div class="modal-body">
                           <div class="container">
                             <div class="row">
-                              {{$sanol->id}}
+                              {{$alumno->id}}
                               <form  method="POST">
                                 {{-- generar el token para el envio de dato csrf --}}
                                 {{ csrf_field() }}

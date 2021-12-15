@@ -1,6 +1,6 @@
-@extends('layout.head')
-@extends('layouts.app')
-@extends('layout.navbar')
+@extends('inicio.head')
+@extends('inicio.app')
+@extends('inicio.navbar')
 @section('content')
 <div class="panel-body">
   @if (session('mesage'))
@@ -54,7 +54,7 @@
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ingresa Una Categoria </h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Ingresa Una Materia </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label=""></button>
                       </div>
                       <div class="modal-body">
@@ -97,17 +97,17 @@
                         <td>
                           <button type="button" class="btn  btn-primary"><i class="far fa-eye"></i></button>
                           <a href="/materias/{{$materia->id}}/edit" class="btn btn-success"><i class="fas fa-pen-square"></i></a>
-                          {{-- <a class="btn btn-success"  data-bs-target="#modalUpdate" data-catid="{{$materia->id}}" data-bs-toggle="modal">
+                          {{-- <a class="btn btn-success"  data-bs-target="#modalUpdate" data-catid="{{$category->id}}" data-bs-toggle="modal">
                             <i class="fas fa-pen-square"></i></a> --}}
 
-                          <form action="{{ route('materia.destroy', $materia) }}" method="POST">
+                          {{-- <form action="{{ route('category.destroy', $category) }}" method="POST">
                             @method('DELETE')
                             @csrf
                             <button type='submit' class="btn btn-sm btn-danger"
                               onClick="return confirm('estas seguro  a eliminar el registro?')">
                               <i class="far fa-trash-alt"></i>
                             </button>
-                          </form> 
+                          </form> --}}
 
                         </td>
                       </tr>

@@ -39,7 +39,7 @@ class SalonesController extends Controller
         Salones::create([
             'nombre'=>$request->nombre,
         ]);
-        return redirect('/salones')->with('mesage', 'El salon se a agregado exitosamente!');
+        return redirect('/salones')->with('mesage', 'salon agregado correctamente!');
     }
 
     /**
@@ -59,10 +59,10 @@ class SalonesController extends Controller
      * @param  \App\Salones  $salones
      * @return \Illuminate\Http\Response
      */
-    public function edit(Salones $id)
+    public function edit($id)
     {
-        $classroom=Salones::findOrFail($id);
-        return view('salones.edit',['classroom'=>$classroom]);
+        $salon=Salones::findOrFail($id);
+        return view('salones.edit',['salon'=>$salon]);
     }
 
     /**
@@ -72,9 +72,9 @@ class SalonesController extends Controller
      * @param  \App\Salones  $salones
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Salones $salones)
+    public function update(Request $request, $id_salon)
     {
-        $classroom=Salones::findOrFail($salones->id);
+        $classroom=Salones::findOrFail($id_salon);
         $classroom->update($request->all());
         return redirect('/salones')->with('mesage', 'El salon se a actualizado exitosamente!');
     }

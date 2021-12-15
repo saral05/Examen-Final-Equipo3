@@ -1,4 +1,4 @@
-<!-- Navbar -->@extends("inicio.head")
+@extends("inicio.head")
 <nav class="navbar navbar-expand-lg " color-on-scroll="500">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#pablo"> Dashboard </a>
@@ -17,8 +17,8 @@
                             </li>
                             <li class="dropdown nav-item">
                                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                                    <i class="nc-icon nc-planet"></i>
-                                    <span class="notification">5</span>
+                                    <!-- <i class="nc-icon nc-planet"></i> -->
+                                    <span class="nc-icon nc-planet">Menú</span>
                                     <span class="d-lg-none">Notification</span>
                                 </a>
                                 <ul class="dropdown-menu">

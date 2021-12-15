@@ -26,7 +26,6 @@
 </head>
 <body class="g-sidenav-show  bg-gray-200">
 
-    @include('inicio/navbar')
     @include('inicio/head')
 
     @yield('content')

@@ -1,1 +1,1 @@
-@extends("inicio.navbar")
+@extends("auth.login")

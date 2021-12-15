@@ -43,31 +43,25 @@ class MateriasController extends Controller
         Materias::create([
             'nombre' => $request->nombre,
         ]);
-        return redirect('/materias')->with('mesage', 'La materia se a creado exitosamente!');
+        return redirect('/materias')->with('mesage', 'Materia creada correctamente!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Materias  $materias
-     * @return \Illuminate\Http\Response
-     */
     public function show(Materias $materias)
     {
         //
     }
-
+    //edicion de materias
     public function edit($id)
     {
-        $materias = Materias::findOrFail($id);
-        return view('materias.edit', ['materias' => $materias]);
+        $matery = Materias::findOrFail($id);
+        return view('materias.edit', ['matery' => $matery]);
     }
 
 
     public function update(Request $request, $id)
     {
-        $materias = Materias::findOrFail($id);
-        $materias->update($request->all());
+        $matery = Materias::findOrFail($id);
+        $matery->update($request->all());
         return redirect('/materias')->with('mesage', 'La materia se a actualizado exitosamente!');
     }
 
